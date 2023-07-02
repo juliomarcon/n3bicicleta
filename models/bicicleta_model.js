@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import db from "../config/database.js"
 
-const Bicicleta = db.define('bicicleta', {
+const Bicicleta = db.define('bicicletas', {
     id_bicicleta: {
         type: Sequelize.INTEGER,
         primaryKey: true

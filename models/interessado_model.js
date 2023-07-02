@@ -3,16 +3,15 @@ import db from "../config/database.js";
 
 const { DataTypes } = Sequelize;
 
-const Interessado = db.define('interessado', {
-   id_interessado: {
-        type: DataTypes.INTEGER,
-        primaryKey: true
-    },
-    nome_interessado: {
+const Interessado = db.define('interessados', {
+    nome: {
         type: DataTypes.STRING(100)
     },
-    turno_interessado: {
+    email: {
         type: DataTypes.STRING(100)
+    },
+    telefone: {
+        type: DataTypes.STRING(11)
     }
 }, {
     freezeTableName: true,

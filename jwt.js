@@ -1,6 +1,6 @@
-const jwt = require('jsonwebtoken');
+import jwt from "jsonwebtoken";
 
-const generateToken = (userId) => {
+export const generateToken = (userId) => {
   const payload = {
     userId: userId
   };
@@ -10,7 +10,7 @@ const generateToken = (userId) => {
   return token;
 };
 
-const authenticateToken = (req, res, next) => {
+export const authenticateToken = (req, res, next) => {
   const token = req.headers.authorization;
 
   if (!token) {
@@ -24,9 +24,4 @@ const authenticateToken = (req, res, next) => {
   } catch (error) {
     return res.status(403).json({ error: 'Token inválido' });
   }
-};
-
-module.exports = {
-  generateToken,
-  authenticateToken
 };

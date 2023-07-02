@@ -1,17 +1,20 @@
 import bicicleta from "../models/bicicleta_model.js";
 import interessado from "../models/interessado_model.js";
 import quadrodabicicleta from "../models/quadrodabicicleta_model.js";
-import { generateToken } from "../path/para/seu/arquivo/jwt.js";
+import { generateToken } from "../jwt.js";
 
 // Função para realizar login e gerar o token JWT
 export const login = (req, res) => {
- 
-  const userId = 123; 
+
+  const userId = req.params;
+
+  if (!userId) {
+    res.status(400).json({ error: "É necessário o id do interessado." });
+  }
+
   const token = generateToken(userId);
-  res.json({ token: token });
+  res.status(200).json({ token: token });
 };
-
-
 
 
 export const getBicicletas = async (req, res) => {
