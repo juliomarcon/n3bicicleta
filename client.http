@@ -1,0 +1,66 @@
+GET http://localhost:5000/professor HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:5000/turma HTTP/1.1
+Content-Type: application/json
+
+###
+
+GET http://localhost:5000/curso HTTP/1.1
+Content-Type: application/json
+
+###
+
+POST http://localhost:5000/interessado HTTP/1.1
+Content-Type: application/json
+
+{
+    "id_interessado": 1,
+    "nome_interessado": "João",
+    "email_interessado": "joao@meusite.com"
+}
+
+###
+
+POST http://localhost:5000/bicicleta HTTP/1.1
+Content-Type: application/json
+
+{
+    "id_bicicleta": 1,
+    "id_interessado": 2,
+    "id_quadro_bicicleta": 3
+}
+
+###
+
+PUT http://localhost:5000/bicicleta/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id_interessado": 3,
+    "id_quadro_bicicleta": 4
+}
+
+
+###
+
+POST http://localhost:5000/quadrodabicicleta HTTP/1.1
+Content-Type: application/json
+
+{
+    "id_quadrodabicicleta": 1,
+    "tamanho_quadro": "M"
+}
+
+###
+DELETE http://localhost:5000/quadrodabicicleta/1 HTTP/1.1
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:5000/bicicleta/1 HTTP/1.1
+Content-Type: application/json
+
+
+###
